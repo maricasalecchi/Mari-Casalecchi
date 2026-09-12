@@ -1,0 +1,23 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#17100d}
+body{min-width:320px}
+.home{width:min(100%,1040px);margin:0 auto;padding:calc(7.2vw - 2cm) 6vw 4vw}
+.site-header{width:100%;max-width:820px;margin:0 auto}
+.title-wrap,.menu-wrap{width:100%}
+.title-wrap img,.menu-wrap>img{display:block;width:100%;height:auto}
+.menu-wrap{position:relative;margin-top:3.1%}
+.menu{position:absolute;inset:0}
+.m{position:absolute;top:0;height:100%;display:block}
+.desenhos { left:0.0000%; width:12.4499%; }
+.objetos { left:16.4561%; width:9.3374%; }
+.espacos { left:29.7689%; width:10.7858%; }
+.posteres { left:44.5609%; width:11.0324%; }
+.publicacoes { left:59.5686%; width:15.2234%; }
+.pinturas { left:78.7673%; width:10.0154%; }
+.sobre { left:92.7889%; width:7.2111%; }
+.hero{display:flex;justify-content:center;margin-top:calc(4.8vw - 1.5cm)}
+.hero img{display:block;width:min(100%,880px);height:auto}
+@media(max-width:700px){
+.home{padding:max(12px, calc(8vw - 2cm)) 5vw 5vw}
+.hero{margin-top:2.5vw}
+}
