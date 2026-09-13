@@ -18,6 +18,13 @@ body{min-width:320px}
 .hero{display:flex;justify-content:center;margin-top:calc(4.8vw - 1.5cm)}
 .hero img{display:block;width:min(100%,880px);height:auto}
 @media(max-width:700px){
-.home{padding:max(12px, calc(8vw - 2cm)) 5vw 5vw}
-.hero{margin-top:2.5vw}
+  .home{
+    min-height:100svh;
+    padding:0 5vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .site-header{width:90%;}
+  .hero{margin-top:4.2vw;}
 }
