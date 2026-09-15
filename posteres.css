@@ -1,0 +1,48 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#17100d}
+body{min-width:320px}
+.posters-page{width:100%;max-width:1912px;margin:0 auto;padding-top:216px}
+.site-header{width:950px;margin:0 auto}
+.title-wrap,.menu-wrap{display:block;width:100%}
+.title-wrap img,.menu-wrap>img{display:block;width:100%;height:auto}
+.menu-wrap{position:relative;margin-top:31px}
+.menu{position:absolute;inset:0}
+.m{position:absolute;top:0;height:100%;display:block}
+.desenhos{left:0;width:12.4499%}.objetos{left:16.4561%;width:9.3374%}.espacos{left:29.7689%;width:10.7858%}.posteres{left:44.5609%;width:11.0324%}.publicacoes{left:59.5686%;width:15.2234%}.pinturas{left:78.7673%;width:10.0154%}.sobre{left:92.7889%;width:7.2111%}
+.poster-grid{width:950px;margin:128px auto 0;display:grid;grid-template-columns:repeat(3,281px);column-gap:53px;row-gap:22px;align-items:start}
+.poster-card{display:block;text-decoration:none;color:inherit;text-align:center}
+.cover{display:block;width:281px;height:351px;object-fit:cover}
+.lettering{height:31px;margin-top:28px;display:flex;align-items:flex-start;justify-content:center}
+.lettering img{display:block;height:15px;width:auto;max-width:100%}
+@media(max-width:700px){
+  .posters-page{padding:0 5vw 12vw;min-height:100svh}
+  .site-header{width:90%;padding-top:12vw}
+  .menu-wrap{margin-top:3.1%}
+  .poster-grid{width:90%;margin:12vw auto 0;display:flex;flex-direction:column;gap:12vw}
+  .poster-card{width:100%}
+  .cover{width:100%;height:auto;aspect-ratio:750/938;object-fit:cover}
+  .lettering{margin-top:4vw;height:auto}
+  .lettering img{height:15px;max-height:15px}
+}
+/* Letterings: mesma escala visual da arte original; Laje SP = referência de 15px */
+.lettering img[alt="laje sp"]{height:15px}
+.lettering img[alt="sheela"]{height:12.52px}
+.lettering img[alt="javali"]{height:14.66px}
+@media(max-width:700px){
+  .lettering img[alt="laje sp"]{height:15px;max-height:15px}
+  .lettering img[alt="sheela"]{height:12.52px;max-height:12.52px}
+  .lettering img[alt="javali"]{height:14.66px;max-height:14.66px}
+}
+
+.lettering img[alt="solov"]{height:15px}
+@media(max-width:700px){.lettering img[alt="solov"]{height:15px;max-height:15px}}
+
+/* Ajuste final aprovado: títulos uniformes a 14px, mais próximos das capas. */
+.poster-title{display:block;margin-top:14px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;line-height:17px;text-align:center;color:#17100d}
+@media(max-width:700px){.poster-title{margin-top:14px;font-size:14px;line-height:17px}}
+
+/* Interação final aprovada: hover discreto de 3% somente nas capas. */
+.poster-card .cover{transition:transform .18s ease;transform-origin:center center}
+@media (hover:hover) and (pointer:fine){
+  .poster-card:hover .cover{transform:scale(1.03)}
+}

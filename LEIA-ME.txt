@@ -1,0 +1,2 @@
+Versão 4: toda a composição (nome, menu e ilustração) foi subida aproximadamente 2 cm. Mantidos o espaçamento uniforme do menu e a ilustração 1,5 cm mais próxima do cabeçalho.
+Abra index.html no navegador para conferir.
