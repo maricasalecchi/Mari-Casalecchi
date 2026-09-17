@@ -1,0 +1,46 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#17100d}
+body{min-width:320px}
+.about-page{width:100%;max-width:1912px;margin:0 auto;padding-top:calc(7.2vw - 2cm)}
+.site-header{width:100%;max-width:820px;margin:0 auto}
+.title-wrap,.menu-wrap{display:block;width:100%}
+.title-wrap img,.menu-wrap>img{display:block;width:100%;height:auto}
+.menu-wrap{position:relative;margin-top:3.1%}
+.menu{position:absolute;inset:0}
+.m{position:absolute;top:0;height:100%;display:block}
+.desenhos{left:0;width:12.4499%}
+.objetos{left:16.4561%;width:9.3374%}
+.espacos{left:29.7689%;width:10.7858%}
+.posteres{left:44.5609%;width:11.0324%}
+.publicacoes{left:59.5686%;width:15.2234%}
+.pinturas{left:78.7673%;width:10.0154%}
+.sobre{left:92.7889%;width:7.2111%}
+
+/* Layout aprovado do Sobre */
+.about-content{width:820px;margin:76px auto 0}
+.about-illustration{display:block;width:820px;height:auto}
+.about-bottom{
+  width:820px;
+  margin-top:50px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between
+}
+.about-bio{display:block;width:440px;height:auto}
+.contact-card{position:relative;width:273px;flex:0 0 273px}
+.contact-card>img{display:block;width:100%;height:auto}
+.contact-link{position:absolute;left:5%;display:block;width:92%;z-index:2}
+.contact-link.email{top:27%;height:22%}
+.contact-link.whatsapp{top:49%;height:22%}
+.contact-link.instagram{top:71%;height:22%}
+
+@media(max-width:700px){
+  .about-page{padding:0 5vw 12vw;min-height:100vh}
+  .site-header{width:90%;padding-top:12vw}
+  .menu-wrap{margin-top:3.1%}
+  .about-content{width:90%;margin-top:12vw}
+  .about-illustration{width:100%;height:auto}
+  .about-bottom{width:100%;margin-top:7vw;display:block}
+  .about-bio{width:100%;height:auto}
+  .contact-card{width:62%;margin:8vw 0 0 auto}
+}

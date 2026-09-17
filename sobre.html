@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre — Mari Casalecchi</title>
+  <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+<main class="about-page">
+  <header class="site-header">
+    <a class="title-wrap" href="index.html"><img src="assets/title.png" alt="Mari Casalecchi"></a>
+    <div class="menu-wrap">
+      <img src="assets/menu-sobre-cinza40.png" alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
+      <nav class="menu" aria-label="Navegação principal">
+        <a class="m desenhos" href="#desenhos" aria-label="Desenhos"></a>
+        <a class="m objetos" href="objetos.html" aria-label="Objetos"></a>
+        <a class="m espacos" href="#espacos" aria-label="Espaços"></a>
+        <a class="m posteres" href="posteres.html" aria-label="Pôsteres"></a>
+        <a class="m publicacoes" href="#publicacoes" aria-label="Publicações"></a>
+        <a class="m pinturas" href="#pinturas" aria-label="Pinturas"></a>
+        <a class="m sobre" href="sobre.html" aria-label="Sobre"></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-content" aria-label="Sobre Mari Casalecchi">
+    <img class="about-illustration" src="assets/sobre/ilustra_bio.jpg" alt="Ilustração de Mari Casalecchi">
+
+    <div class="about-bottom">
+      <img class="about-bio" src="assets/sobre/bio@2x.png" alt="Biografia de Mari Casalecchi">
+
+      <div class="contact-card">
+        <img src="assets/sobre/caixa@2x.png" alt="Contato: e-mail, WhatsApp e Instagram">
+        <a class="contact-link email" href="mailto:marianacasalecchi@gmail.com" aria-label="Enviar e-mail para Mari Casalecchi"></a>
+        <a class="contact-link whatsapp" href="https://wa.me/5511975455686" target="_blank" rel="noopener" aria-label="Falar com Mari Casalecchi pelo WhatsApp"></a>
+        <a class="contact-link instagram" href="https://www.instagram.com/maricasalecchi/" target="_blank" rel="noopener" aria-label="Instagram de Mari Casalecchi"></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  const img=document.querySelector('.menu-wrap > img');
+  if(!img)return;
+  const active='assets/menu-sobre-cinza40.png';
+  const map={
+    desenhos:'assets/menu-desenhos-cinza40.png',
+    objetos:'assets/menu-objetos-cinza40.png',
+    espacos:'assets/menu-espacos-cinza40.png',
+    posteres:'assets/menu-posteres-cinza40.png',
+    publicacoes:'assets/menu-publicacoes-cinza40.png',
+    pinturas:'assets/menu-pinturas-cinza40.png',
+    sobre:active
+  };
+  document.querySelectorAll('.menu .m').forEach(a=>{
+    const key=[...a.classList].find(c=>c!=='m');
+    a.addEventListener('mouseenter',()=>{if(map[key])img.src=map[key]});
+    a.addEventListener('mouseleave',()=>{img.src=active});
+  });
+})();
+</script>
+</body>
+</html>
