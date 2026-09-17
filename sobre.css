@@ -59,5 +59,6 @@ body{min-width:320px}
   width:62%;
   flex:none;
   margin-top:8vw;
+align-self:flex-start;
 }
 }
