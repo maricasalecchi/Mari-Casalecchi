@@ -52,6 +52,7 @@ body{min-width:320px}
 }
 .contact-card{
   width:62%;
-  margin:8vw 0 0 auto
+  flex:none;
+  margin:8vw 0 0 auto;
 }
 }
