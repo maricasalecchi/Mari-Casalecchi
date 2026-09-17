@@ -40,7 +40,13 @@ body{min-width:320px}
   .menu-wrap{margin-top:3.1%}
   .about-content{width:90%;margin-top:12vw}
   .about-illustration{width:100%;height:auto}
-  .about-bottom{width:100%;margin-top:7vw;display:block}
-  .about-bio{width:100%;height:auto}
-  .contact-card{width:62%;margin:8vw 0 0 auto}
+  .about-bottom{
+    width:100%;
+    margin-top:7vw;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between
+  }
+  .about-bio{width:53.66%;height:auto}
+  .contact-card{width:33.29%;flex:0 0 33.29%;margin:0}
 }
