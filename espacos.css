@@ -130,7 +130,7 @@ body{
 }
 
 
-/* LETTERINGS — originais exportados em 3x */
+/* LETTERINGS — mesmo tamanho visual de PINTURAS */
 
 .lettering{
   height:31px;
@@ -143,35 +143,9 @@ body{
 
 .lettering img{
   display:block;
-  height:auto;
+  height:14px;
+  width:auto;
   max-width:none;
-}
-
-
-/* TODOS NA MESMA ESCALA 3x → 1x */
-
-.lettering img[src$="/resgate.png"]{
-  width:89px;
-}
-
-.lettering img[src$="/lingua.png"]{
-  width:145px;
-}
-
-.lettering img[src$="/pqagua.png"]{
-  width:274px;
-}
-
-.lettering img[src$="/labof.png"]{
-  width:67px;
-}
-
-.lettering img[src$="/pqpovo.png"]{
-  width:365px;
-}
-
-.lettering img[src$="/gloria.png"]{
-  width:167px;
 }
 
 
@@ -203,5 +177,16 @@ body{
   .cover{
     width:100%;
     height:auto;
+  }
+
+  .lettering{
+    margin-top:14px;
+    height:auto;
+  }
+
+  .lettering img{
+    height:14px;
+    width:auto;
+    max-width:none;
   }
 }
