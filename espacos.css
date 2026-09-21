@@ -20,6 +20,7 @@ body{
   padding-top:calc(7.2vw - 2cm);
 }
 
+
 /* CABEÇALHO */
 
 .site-header{
@@ -129,7 +130,7 @@ body{
 }
 
 
-/* LETTERINGS — arquivos originais exportados em 3x */
+/* LETTERINGS — originais exportados em 3x */
 
 .lettering{
   height:31px;
@@ -146,29 +147,30 @@ body{
   max-width:none;
 }
 
-/* todos reduzidos exatamente na mesma proporção: 3x → 1x */
 
-.lettering img[alt="resgate"]{
+/* TODOS NA MESMA ESCALA 3x → 1x */
+
+.lettering img[src$="/resgate.png"]{
   width:89px;
 }
 
-.lettering img[alt="língua afiada"]{
+.lettering img[src$="/lingua.png"]{
   width:145px;
 }
 
-.lettering img[alt="Parque da Água Branca"]{
+.lettering img[src$="/pqagua.png"]{
   width:274px;
 }
 
-.lettering img[alt="Labof"]{
+.lettering img[src$="/labof.png"]{
   width:67px;
 }
 
-.lettering img[alt="Parque do Povo (Projeto Vivara)"]{
+.lettering img[src$="/pqpovo.png"]{
   width:365px;
 }
 
-.lettering img[alt="Glória Pizzaria"]{
+.lettering img[src$="/gloria.png"]{
   width:167px;
 }
 
