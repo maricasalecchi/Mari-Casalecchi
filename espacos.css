@@ -130,7 +130,10 @@ body{
 }
 
 
-/* LETTERINGS — mesmo tamanho visual de PINTURAS */
+/* LETTERINGS
+   Língua Afiada é a referência aprovada.
+   Todos os demais usam exatamente a mesma escala proporcional.
+*/
 
 .lettering{
   height:31px;
@@ -143,9 +146,36 @@ body{
 
 .lettering img{
   display:block;
-  height:14px;
   width:auto;
   max-width:none;
+}
+
+/* arquivos originais:
+   língua = 78px de altura → 14px na página
+*/
+
+.lettering img[alt="resgate"]{
+  height:12.92px;
+}
+
+.lettering img[alt="língua afiada"]{
+  height:14px;
+}
+
+.lettering img[alt="Parque da Água Branca"]{
+  height:16.15px;
+}
+
+.lettering img[alt="Labof"]{
+  height:11.85px;
+}
+
+.lettering img[alt="Parque do Povo (Projeto Vivara)"]{
+  height:14px;
+}
+
+.lettering img[alt="Glória Pizzaria"]{
+  height:11.85px;
 }
 
 
@@ -182,11 +212,5 @@ body{
   .lettering{
     margin-top:14px;
     height:auto;
-  }
-
-  .lettering img{
-    height:14px;
-    width:auto;
-    max-width:none;
   }
 }
