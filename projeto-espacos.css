@@ -117,6 +117,23 @@ body{
 }
 
 
+/* ITENS COM LEGENDA */
+
+.project-item{
+  width:270px;
+  text-align:center;
+}
+
+.project-caption{
+  margin-top:10px;
+  font-size:14px;
+  line-height:17px;
+  font-weight:400;
+  text-align:center;
+  color:#17100d;
+}
+
+
 /* VÍDEOS — LABOF */
 
 .project-images video{
@@ -153,14 +170,21 @@ body{
   }
 
   .project-images img,
-  .project-images video{
+  .project-images video,
+  .project-item{
     width:100%;
     height:auto;
+  }
+
+  .project-caption{
+    margin-top:10px;
+    font-size:14px;
+    line-height:17px;
   }
 }
 
 
-/* LIGHTBOX — EXATAMENTE O MESMO PADRÃO DE PÔSTERES */
+/* LIGHTBOX — MESMO PADRÃO DE PÔSTERES */
 
 .lightbox{
   position:fixed;
