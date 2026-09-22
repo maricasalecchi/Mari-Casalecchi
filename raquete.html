@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>raquete — Mari Casalecchi</title>
+<link rel="stylesheet" href="projeto.css">
+</head>
+
+<body>
+
+<main class="project-page">
+
+<header class="site-header">
+
+<a class="title-wrap" href="index.html">
+<img src="assets/title.png" alt="Mari Casalecchi">
+</a>
+
+<div class="menu-wrap">
+
+<img src="assets/menu-objetos-cinza40.png"
+alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
+
+<nav class="menu">
+
+<a class="m desenhos" href="desenhos.html"></a>
+<a class="m objetos" href="objetos.html"></a>
+<a class="m espacos" href="espacos.html"></a>
+<a class="m posteres" href="posteres.html"></a>
+<a class="m publicacoes" href="publicacoes.html"></a>
+<a class="m pinturas" href="pinturas.html"></a>
+<a class="m sobre" href="sobre.html"></a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="project-images">
+
+<img
+src="assets/objetos/raquete/raquete.png"
+alt="raquete"
+data-lightbox>
+
+</section>
+
+</main>
+
+<script src="project-lightbox.js"></script>
+
+<script>
+(function(){
+
+const img=document.querySelector('.menu-wrap > img');
+
+if(!img)return;
+
+const active='assets/menu-objetos-cinza40.png';
+
+const map={
+desenhos:'assets/menu-desenhos-cinza40.png',
+objetos:active,
+espacos:'assets/menu-espacos-cinza40.png',
+posteres:'assets/menu-posteres-cinza40.png',
+publicacoes:'assets/menu-publicacoes-cinza40.png',
+pinturas:'assets/menu-pinturas-cinza40.png',
+sobre:'assets/menu-sobre-cinza40.png'
+};
+
+document.querySelectorAll('.menu .m').forEach(a=>{
+
+const key=[...a.classList].find(c=>c!=='m');
+
+a.addEventListener('mouseenter',()=>{
+if(map[key])img.src=map[key];
+});
+
+a.addEventListener('mouseleave',()=>{
+img.src=active;
+});
+
+});
+
+})();
+</script>
+
+</body>
+</html>
