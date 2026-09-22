@@ -16,5 +16,6 @@ body{min-width:320px;font-family:Arial,Helvetica,sans-serif}
 .object-lettering .letter-cinzeiros{height:10.93px}
 .object-lettering .letter-azulejos{height:12.85px}
 .object-lettering .letter-lou{height:12.85px}
+.object-lettering .letter-raquete{height:12.85px}
 @media (hover:hover) and (pointer:fine){.object-card:hover .cover{transform:scale(1.03)}}
 @media(max-width:700px){.objects-page{padding:0 5vw 12vw;min-height:100svh}.site-header{width:90%;padding-top:12vw}.menu-wrap{margin-top:3.1%}.object-grid{width:90%;margin:12vw auto 0;display:flex;flex-direction:column;gap:12vw}.object-card{width:100%}.cover{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}.object-lettering{margin-top:13px;height:17px}}
