@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desenhos — Mari Casalecchi</title>
+<meta name="description" content="Desenhos de Mari Casalecchi.">
+<link rel="stylesheet" href="desenhos.css">
+</head>
+
+<body>
+
+<main class="drawings-page">
+
+<header class="site-header">
+
+  <a class="title-wrap" href="index.html">
+    <img src="assets/title.png" alt="Mari Casalecchi">
+  </a>
+
+  <div class="menu-wrap">
+
+    <img src="assets/menu-desenhos-cinza40.png"
+         alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
+
+    <nav class="menu" aria-label="Navegação principal">
+      <a class="m desenhos" href="desenhos.html" aria-label="Desenhos"></a>
+      <a class="m objetos" href="objetos.html" aria-label="Objetos"></a>
+      <a class="m espacos" href="espacos.html" aria-label="Espaços"></a>
+      <a class="m posteres" href="posteres.html" aria-label="Pôsteres"></a>
+      <a class="m publicacoes" href="publicacoes.html" aria-label="Publicações"></a>
+      <a class="m pinturas" href="pinturas.html" aria-label="Pinturas"></a>
+      <a class="m sobre" href="sobre.html" aria-label="Sobre"></a>
+    </nav>
+
+  </div>
+
+</header>
+
+<section class="drawing-grid" id="drawing-grid" aria-label="Desenhos"></section>
+
+</main>
+
+<script>
+(function(){
+
+  const grid = document.getElementById('drawing-grid');
+
+  const videos = new Set([14,15,38,67,68]);
+
+  for(let i=1;i<=94;i++){
+
+    if(videos.has(i)){
+
+      const video=document.createElement('video');
+
+      video.src='assets/desenhos/'+i+'.mp4';
+      video.autoplay=true;
+      video.loop=true;
+      video.muted=true;
+      video.playsInline=true;
+      video.preload='metadata';
+
+      grid.appendChild(video);
+
+    }else{
+
+      const image=document.createElement('img');
+
+      image.src='assets/desenhos/'+i+'.jpg';
+      image.alt='Desenho '+i;
+      image.loading='lazy';
+      image.dataset.lightbox='';
+
+      grid.appendChild(image);
+    }
+  }
+
+})();
+</script>
+
+<script src="project-lightbox.js"></script>
+
+<script>
+(function(){
+
+  const img=document.querySelector('.menu-wrap > img');
+
+  if(!img) return;
+
+  const active='assets/menu-desenhos-cinza40.png';
+
+  const map={
+    desenhos:active,
+    objetos:'assets/menu-objetos-cinza40.png',
+    espacos:'assets/menu-espacos-cinza40.png',
+    posteres:'assets/menu-posteres-cinza40.png',
+    publicacoes:'assets/menu-publicacoes-cinza40.png',
+    pinturas:'assets/menu-pinturas-cinza40.png',
+    sobre:'assets/menu-sobre-cinza40.png'
+  };
+
+  document.querySelectorAll('.menu .m').forEach(a=>{
+
+    const key=[...a.classList].find(c=>c!=='m');
+
+    a.addEventListener('mouseenter',()=>{
+      if(map[key]) img.src=map[key];
+    });
+
+    a.addEventListener('mouseleave',()=>{
+      img.src=active;
+    });
+
+  });
+
+})();
+</script>
+
+</body>
+</html>
