@@ -14,7 +14,7 @@
   <div class="menu-wrap">
     <img src="assets/menu-even.png" alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
     <nav class="menu" aria-label="Navegação principal">
-      <a class="m desenhos" href="#desenhos" aria-label="Desenhos"></a>
+      <a class="m desenhos" href="desenhos.html" aria-label="Desenhos"></a>
       <a class="m objetos" href="objetos.html" aria-label="Objetos"></a>
       <a class="m espacos" href="espacos.html" aria-label="Espaços"></a>
       <a class="m posteres" href="posteres.html" aria-label="Pôsteres"></a>
@@ -26,18 +26,37 @@
 </header>
 <section class="hero"><img src="assets/strip.png" alt=""></section>
 </main>
+
 <script>
 (function(){
   const img=document.querySelector('.menu-wrap > img');
   if(!img) return;
+
   const base='assets/menu-even.png';
-  const map={desenhos:'assets/menu-desenhos-cinza40.png',objetos:'assets/menu-objetos-cinza40.png',espacos:'assets/menu-espacos-cinza40.png',posteres:'assets/menu-posteres-cinza40.png',publicacoes:'assets/menu-publicacoes-cinza40.png',pinturas:'assets/menu-pinturas-cinza40.png',sobre:'assets/menu-sobre-cinza40.png'};
+
+  const map={
+    desenhos:'assets/menu-desenhos-cinza40.png',
+    objetos:'assets/menu-objetos-cinza40.png',
+    espacos:'assets/menu-espacos-cinza40.png',
+    posteres:'assets/menu-posteres-cinza40.png',
+    publicacoes:'assets/menu-publicacoes-cinza40.png',
+    pinturas:'assets/menu-pinturas-cinza40.png',
+    sobre:'assets/menu-sobre-cinza40.png'
+  };
+
   document.querySelectorAll('.menu .m').forEach(a=>{
     const key=[...a.classList].find(c=>c!=='m');
-    a.addEventListener('mouseenter',()=>{ if(map[key]) img.src=map[key]; });
-    a.addEventListener('mouseleave',()=>{ img.src=base; });
+
+    a.addEventListener('mouseenter',()=>{
+      if(map[key]) img.src=map[key];
+    });
+
+    a.addEventListener('mouseleave',()=>{
+      img.src=base;
+    });
   });
 })();
 </script>
+
 </body>
 </html>
