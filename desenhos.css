@@ -1,0 +1,176 @@
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:#fff;
+  color:#17100d
+}
+
+body{
+  min-width:320px
+}
+
+.drawings-page{
+  width:100%;
+  max-width:1912px;
+  margin:0 auto;
+  padding-top:calc(7.2vw - 2cm);
+  padding-bottom:100px
+}
+
+/* CABEÇALHO — EXATAMENTE O MESMO PADRÃO DE PÔSTERES */
+
+.site-header{
+  width:100%;
+  max-width:820px;
+  margin:0 auto
+}
+
+.title-wrap,.menu-wrap{
+  display:block;
+  width:100%
+}
+
+.title-wrap img,.menu-wrap>img{
+  display:block;
+  width:100%;
+  height:auto
+}
+
+.menu-wrap{
+  position:relative;
+  margin-top:3.1%
+}
+
+.menu{
+  position:absolute;
+  inset:0
+}
+
+.m{
+  position:absolute;
+  top:0;
+  height:100%;
+  display:block
+}
+
+.desenhos{left:0;width:12.4499%}
+.objetos{left:16.4561%;width:9.3374%}
+.espacos{left:29.7689%;width:10.7858%}
+.posteres{left:44.5609%;width:11.0324%}
+.publicacoes{left:59.5686%;width:15.2234%}
+.pinturas{left:78.7673%;width:10.0154%}
+.sobre{left:92.7889%;width:7.2111%}
+
+/* GRADE — MESMAS MEDIDAS DE PÔSTERES */
+
+.drawing-grid{
+  width:950px;
+  margin:128px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,281px);
+  column-gap:53px;
+  row-gap:22px;
+  align-items:start
+}
+
+/* DESENHOS E VÍDEOS */
+
+.drawing-grid img,
+.drawing-grid video{
+  display:block;
+  width:281px;
+  height:351px;
+  object-fit:contain
+}
+
+.drawing-grid img{
+  cursor:zoom-in;
+  transition:transform .18s ease;
+  transform-origin:center center
+}
+
+@media (hover:hover) and (pointer:fine){
+  .drawing-grid img:hover{
+    transform:scale(1.03)
+  }
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.88);
+  padding:5vh 5vw
+}
+
+.lightbox.is-open{
+  display:flex
+}
+
+.lightbox img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:90vw;
+  max-height:90vh;
+  object-fit:contain;
+  cursor:zoom-out
+}
+
+.lightbox-close{
+  position:fixed;
+  top:22px;
+  right:28px;
+  border:0;
+  background:transparent;
+  color:#17100d;
+  font:300 34px/1 Arial,Helvetica,sans-serif;
+  cursor:pointer;
+  padding:4px 8px
+}
+
+body.lightbox-open{
+  overflow:hidden
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .drawings-page{
+    padding:0 5vw 12vw;
+    min-height:100svh
+  }
+
+  .site-header{
+    width:90%;
+    padding-top:12vw
+  }
+
+  .menu-wrap{
+    margin-top:3.1%
+  }
+
+  .drawing-grid{
+    width:90%;
+    margin:12vw auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:12vw
+  }
+
+  .drawing-grid img,
+  .drawing-grid video{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain
+  }
+}
