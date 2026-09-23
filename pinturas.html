@@ -8,39 +8,55 @@
 </head>
 <body>
 <main class="paintings-page">
+
 <header class="site-header">
-  <a class="title-wrap" href="index.html"><img src="assets/title.png" alt="Mari Casalecchi"></a>
+  <a class="title-wrap" href="index.html">
+    <img src="assets/title.png" alt="Mari Casalecchi">
+  </a>
+
   <div class="menu-wrap">
-    <img src="assets/menu-pinturas-cinza40.png" alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
+    <img src="assets/menu-pinturas-cinza40.png"
+         alt="desenhos, objetos, espaços, pôsteres, publicações, pinturas, sobre">
+
     <nav class="menu" aria-label="Navegação principal">
       <a class="m desenhos" href="desenhos.html" aria-label="Desenhos"></a>
-<a class="m objetos" href="objetos.html" aria-label="Objetos"></a>
-<a class="m espacos" href="espacos.html" aria-label="Espaços"></a>
-<a class="m posteres" href="posteres.html" aria-label="Pôsteres"></a>
-<a class="m publicacoes" href="publicacoes.html" aria-label="Publicações"></a>
-<a class="m pinturas" href="pinturas.html" aria-label="Pinturas"></a>
-<a class="m sobre" href="sobre.html" aria-label="Sobre"></a>
+      <a class="m objetos" href="objetos.html" aria-label="Objetos"></a>
+      <a class="m espacos" href="espacos.html" aria-label="Espaços"></a>
+      <a class="m posteres" href="posteres.html" aria-label="Pôsteres"></a>
+      <a class="m publicacoes" href="publicacoes.html" aria-label="Publicações"></a>
+      <a class="m pinturas" href="pinturas.html" aria-label="Pinturas"></a>
+      <a class="m sobre" href="sobre.html" aria-label="Sobre"></a>
     </nav>
   </div>
 </header>
 
 <section class="painting-grid" aria-label="Pinturas">
+
   <div class="painting-card">
     <img class="cover" src="assets/pinturas/pintura1.jpg" alt="Em mãos">
-    <div class="lettering"><img src="assets/letterings-pinturas/em-maos.png" alt="em mãos"></div>
+    <div class="lettering">
+      <img src="assets/letterings-pinturas/em-maos.png" alt="em mãos">
+    </div>
   </div>
+
   <div class="painting-card">
     <img class="cover" src="assets/pinturas/pintura2.jpg" alt="Tudo passa pelo céu">
-    <div class="lettering"><img src="assets/letterings-pinturas/tudo-passa-pelo-ceu.png" alt="tudo passa pelo céu"></div>
+    <div class="lettering">
+      <img src="assets/letterings-pinturas/tudo-passa-pelo-ceu.png" alt="tudo passa pelo céu">
+    </div>
   </div>
+
 </section>
+
 </main>
 
 <script>
 (function(){
   const img=document.querySelector('.menu-wrap > img');
   if(!img) return;
+
   const active='assets/menu-pinturas-cinza40.png';
+
   const map={
     desenhos:'assets/menu-desenhos-cinza40.png',
     objetos:'assets/menu-objetos-cinza40.png',
@@ -50,12 +66,91 @@
     pinturas:active,
     sobre:'assets/menu-sobre-cinza40.png'
   };
+
   document.querySelectorAll('.menu .m').forEach(a=>{
     const key=[...a.classList].find(c=>c!=='m');
-    a.addEventListener('mouseenter',()=>{if(map[key]) img.src=map[key];});
-    a.addEventListener('mouseleave',()=>{img.src=active;});
+
+    a.addEventListener('mouseenter',()=>{
+      if(map[key]) img.src=map[key];
+    });
+
+    a.addEventListener('mouseleave',()=>{
+      img.src=active;
+    });
   });
 })();
 </script>
+
+<script>
+(function(){
+
+  const paintings=document.querySelectorAll('.painting-card .cover');
+  if(!paintings.length) return;
+
+  const box=document.createElement('div');
+
+  box.style.position='fixed';
+  box.style.inset='0';
+  box.style.zIndex='9999';
+  box.style.display='none';
+  box.style.alignItems='center';
+  box.style.justifyContent='center';
+  box.style.background='rgba(255,255,255,.88)';
+  box.style.padding='5vh 5vw';
+
+  box.innerHTML=
+    '<button type="button" aria-label="Fechar" style="position:fixed;top:22px;right:28px;border:0;background:transparent;color:#17100d;font:300 34px/1 Arial,Helvetica,sans-serif;cursor:pointer;padding:4px 8px">×</button>' +
+    '<img alt="" style="display:block;width:auto;height:auto;max-width:90vw;max-height:90vh;object-fit:contain;cursor:zoom-out">';
+
+  document.body.appendChild(box);
+
+  const enlarged=box.querySelector('img');
+  const closeButton=box.querySelector('button');
+
+  function closeBox(){
+    box.style.display='none';
+    document.body.style.overflow='';
+    enlarged.removeAttribute('src');
+  }
+
+  paintings.forEach((painting)=>{
+
+    painting.style.cursor='zoom-in';
+
+    painting.addEventListener('click',()=>{
+
+      enlarged.src=painting.src;
+      enlarged.alt=painting.alt || 'Pintura ampliada';
+
+      const r=painting.getBoundingClientRect();
+
+      enlarged.style.width=
+        Math.min(r.width * 2.5, window.innerWidth * 0.90) + 'px';
+
+      box.style.display='flex';
+      document.body.style.overflow='hidden';
+
+      closeButton.focus();
+    });
+
+  });
+
+  closeButton.addEventListener('click',closeBox);
+
+  box.addEventListener('click',(e)=>{
+    if(e.target===box || e.target===enlarged){
+      closeBox();
+    }
+  });
+
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape' && box.style.display==='flex'){
+      closeBox();
+    }
+  });
+
+})();
+</script>
+
 </body>
 </html>
