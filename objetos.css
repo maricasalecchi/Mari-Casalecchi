@@ -93,20 +93,11 @@ body{min-width:320px;font-family:Arial,Helvetica,sans-serif}
   margin-top:9px
 }
 
-.object-lettering img{
+/* todos os letterings novos usam exatamente a mesma escala */
+.object-lettering .letter-object{
   display:block;
+  height:11px;
   width:auto
-}
-
-.object-lettering .letter-pratos{height:12.47px}
-.object-lettering .letter-cinzeiros{height:10.93px}
-.object-lettering .letter-azulejos{height:12.85px}
-.object-lettering .letter-lou{height:12.85px}
-.object-lettering .letter-raquete{height:12.85px}
-
-.object-lettering .letter-bandeirinhas{
-  width:77px;
-  height:auto;
 }
 
 @media (hover:hover) and (pointer:fine){
@@ -159,5 +150,10 @@ body{min-width:320px;font-family:Arial,Helvetica,sans-serif}
   .object-card:nth-child(2) .object-lettering,
   .object-card:nth-child(3) .object-lettering{
     margin-top:13px
+  }
+
+  .object-lettering .letter-object{
+    height:11px;
+    width:auto
   }
 }
