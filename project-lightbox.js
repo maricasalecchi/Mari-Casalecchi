@@ -6,28 +6,50 @@
   box.className = 'lightbox';
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.setAttribute('aria-label', 'Pôster ampliado');
-  box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Fechar">×</button><img alt="">';
+  box.setAttribute('aria-label', 'Imagem ou vídeo ampliado');
+  box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Fechar">×</button><img alt=""><video autoplay loop muted playsinline controls></video>';
   document.body.appendChild(box);
 
   const enlarged = box.querySelector('img');
+  const enlargedVideo = box.querySelector('video');
   const closeButton = box.querySelector('.lightbox-close');
 
   function closeBox(){
     box.classList.remove('is-open');
     document.body.classList.remove('lightbox-open');
     enlarged.removeAttribute('src');
+    enlargedVideo.pause();
+    enlargedVideo.removeAttribute('src');
+    enlargedVideo.load();
+    enlarged.style.display = 'none';
+    enlargedVideo.style.display = 'none';
   }
 
-  gallery.querySelectorAll('img').forEach((img) => {
-    img.addEventListener('click', () => {
-      enlarged.src = img.src;
-      enlarged.alt = img.alt || 'Pôster ampliado';
+  gallery.querySelectorAll('img, video').forEach((media) => {
+    media.addEventListener('click', () => {
+      enlarged.style.display = 'none';
+      enlargedVideo.style.display = 'none';
 
-      // 2,5x o tamanho renderizado na grade, limitado à área útil da tela.
-      const r = img.getBoundingClientRect();
-      enlarged.style.width = Math.min(r.width * 2.5, window.innerWidth * 0.90) + 'px';
-      enlarged.style.maxHeight = '90vh';
+      const r = media.getBoundingClientRect();
+      const width = Math.min(r.width * 2.5, window.innerWidth * 0.90);
+
+      if (media.tagName === 'IMG') {
+        enlarged.src = media.src;
+        enlarged.alt = media.alt || 'Imagem ampliada';
+        enlarged.style.width = width + 'px';
+        enlarged.style.maxHeight = '90vh';
+        enlarged.style.display = 'block';
+      } else {
+        const source = media.querySelector('source');
+        const videoSrc = source ? source.src : media.currentSrc;
+        enlargedVideo.src = videoSrc;
+        enlargedVideo.style.width = width + 'px';
+        enlargedVideo.style.maxWidth = '90vw';
+        enlargedVideo.style.maxHeight = '90vh';
+        enlargedVideo.style.display = 'block';
+        enlargedVideo.currentTime = 0;
+        enlargedVideo.play().catch(() => {});
+      }
 
       box.classList.add('is-open');
       document.body.classList.add('lightbox-open');

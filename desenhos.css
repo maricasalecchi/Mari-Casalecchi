@@ -124,6 +124,15 @@ body{
   cursor:zoom-out
 }
 
+.lightbox video{
+  display:none;
+  width:auto;
+  height:auto;
+  max-width:90vw;
+  max-height:90vh;
+  object-fit:contain
+}
+
 .lightbox-close{
   position:fixed;
   top:22px;
